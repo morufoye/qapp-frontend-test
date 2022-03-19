@@ -1,0 +1,49 @@
+/* ************************************************************
+:: Application Name: QApp
+:: Client Name: QApp
+:: Version: 1.0.0
+:: Generated Date: March 18 2022
+************************************************************ */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #fff;
+    text-rendering: optimizeLegibility;
+    color: rgba(0, 0, 0, .55);
+    height: 100%;
+    overflow: auto;
+}
+
+span,
+address,
+aside {
+    font-size: 14px !important;
+    line-height: 25px !important;
+    color: #858585 !important;
+    margin: 0;
+    font-weight: 400 !important;
+}
+
+
+
+
+a {
+    text-decoration: none !important;
+}
+
+p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #F7F7F7;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+
+.theme {
+    color: #FC7620;
+}

@@ -1,0 +1,66 @@
+.authFormWrapper {
+    background: #09354A;
+    padding: 1rem 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh
+}
+
+.authFormWrapper .authForm {
+    padding: 1rem 2rem;
+    background: radial-gradient(#2F5565, #09354A);
+    border-radius: 20px;
+    margin-top: 3rem;
+    border: 2px solid rgb(229, 229, 229, 0.2);
+}
+
+.authForm .authTop {
+    margin: 2rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.authForm .authTop h2 {
+    text-align: center;
+    color: #F7F7F7;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 1.5rem;
+}
+
+.authTop .authTabs {
+    background: transparent;
+    border: 2px solid rgb(247, 247, 247, 20%);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    background: #2F5565;
+    border: 1px solid rgba(247, 247, 247, 0.2);
+    border-radius: 10px;
+    padding: 0.15rem;
+}
+
+.authTop .authTabs a {
+    text-align: center;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 25px;
+    color: #F7F7F7;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0.3rem 0;
+    letter-spacing: 0.4px;
+    background: #09354A;
+}
+
+.authTop .authTabs a:first-child {
+    /* margin-right: 2rem; */
+}
+
+.authTop .authTabs a.active {
+    background: #2F5565;
+}
