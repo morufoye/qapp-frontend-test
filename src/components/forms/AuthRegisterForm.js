@@ -4,17 +4,12 @@ import "../../styles/form.css";
 import AuthResetPasswordForm from "./AuthResetPasswordForm";
 import AuthOTPForm from "./AuthOTPForm";
 
-const AuthRegisterForm = () => {
-
-  const[showAuthResetPasswordForm, setShowAuthResetPasswordForm] = useState(false)
-
+const AuthRegisterForm = (props) => {
   const showGetOTPForm = () => {
-    setShowAuthResetPasswordForm(true)
+    props.showTokenIputer()
   }
-
   return (
     <Fragment>
-      { !showAuthResetPasswordForm &&
       <form>
         <div className='formWrapper'>
           <div className='row px-0'>
@@ -125,9 +120,7 @@ const AuthRegisterForm = () => {
 
 
 
-      {
-        showAuthResetPasswordForm && <AuthOTPForm type="register"/>
-      }
+
     </Fragment>
   );
 };

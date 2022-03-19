@@ -1,7 +1,15 @@
 import React, {Fragment} from "react";
 import "../../styles/form.css";
+import {useNavigate} from "react-router-dom";
 
 const AuthNewPasswordForm = () => {
+
+  const navigate = useNavigate();
+
+  const handleSubmit  =()=> {
+    navigate('/');
+  }
+
   return (
     <Fragment>
       <form>
@@ -30,7 +38,7 @@ const AuthNewPasswordForm = () => {
 
           <div className='form-group row'>
             <div className='col-lg-12 col-md-12 col-sm-12 px-0'>
-              <button type='button' className='authBtn'>
+              <button type='button' className='authBtn' onClick={handleSubmit}>
                 Submit
               </button>
             </div>

@@ -10,6 +10,21 @@ import styles from "../../styles/auth.module.css";
 
 const ResetPassword = () => {
   const [showToken, setShowToken] = useState(false);
+  const [showEmailInputer, setShowEmailInputer] = useState(true);
+  const[showAuthResetPasswordForm, setShowAuthResetPasswordForm] = useState(false)
+  const[showAuthNewPasswordForm, setShowAuthNewPasswordForm] = useState(false)
+
+  const showTokenInputer = () => {
+    setShowEmailInputer(false)
+    setShowToken(true)
+  }
+
+  const handleTokenResponse = (response) => {
+    if (response === "success") {
+      setShowToken(false)
+      setShowAuthNewPasswordForm(true)
+    }
+  }
 
   return (
     <Fragment>
@@ -18,23 +33,35 @@ const ResetPassword = () => {
           <div className='row'>
             <div className='offset-lg-4 col-lg-4'>
               <div className={styles["authForm"]}>
-                <div className={styles["authTop"]}>
+
+                { showEmailInputer &&
+                    <>
+                  <div className={styles["authTop"]}>
                   <h2>Reset Password</h2>
                   <p className='text-center'>
-                    Enter the email or phone number associated with your account
+                    Enter the email or phone number889  associated with your account
                     to reset your password
                   </p>
                 </div>
-                {/*<AuthOTPForm />*/}
-                 <AuthResetPasswordForm />
-                {/* <AuthNewPasswordForm /> */}
+                 <AuthResetPasswordForm  showTokenInputer={showTokenInputer}/>
+                    </>
+                }
+
+                {   showToken &&
+              <div className={styles["authTop"]}>
+                <AuthOTPForm  handleTokenResponse={handleTokenResponse} type="others"/>
               </div>
-            </div>
+                }
+
+                {  showAuthNewPasswordForm && <AuthNewPasswordForm/>}
+
+              </div>
+              </div>
           </div>
         </div>
       </div>
     </Fragment>
   );
 };
-
+{/*<AuthOTPForm />*/}
 export default ResetPassword;

@@ -1,5 +1,6 @@
 import React, {Fragment} from "react";
 import "../../styles/form.css";
+import styles from "../../styles/auth.module.css";
 
 const AuthOTPForm = (props) => {
 
@@ -11,6 +12,14 @@ const AuthOTPForm = (props) => {
     <Fragment>
       <form>
         <div className='formWrapper'>
+
+          <div className={styles["authTop"]}>
+            <h2></h2>
+            <p className='text-center'>
+              Please enter the OTP sent to your Email address and/or Phone Number
+            </p>
+          </div>
+
           <div className='form-group row'>
             { props.type === 'register'  &&
                    <>

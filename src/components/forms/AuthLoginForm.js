@@ -3,23 +3,16 @@ import {Link, useNavigate} from "react-router-dom";
 import "../../styles/form.css";
 import AuthOTPForm from "./AuthOTPForm";
 
-const AuthLoginForm = () => {
-  const[showTokenInputer, setShowTokenInputer] = useState(false)
+const AuthLoginForm = (props) => {
 
-  const ShowTokenForm = () => {
-    setShowTokenInputer(true)
-  }
 
-  const handleTokenResponse = (response) => {
-    if (response === "success") {
-      alert("login successfull dashboard under development")
-    }
-  }
+ const showTokenForm = () => {
+   props.showTokenForm()
+ }
 
   return (
     <Fragment>
-      {
-          !showTokenInputer &&
+
       <form>
         <div className='formWrapper'>
           <div className='form-group row'>
@@ -65,7 +58,7 @@ const AuthLoginForm = () => {
               <button
                   type='button'
                   className='authBtn'
-                  onClick={ShowTokenForm}
+                  onClick={showTokenForm}
               >
                 Sign In
               </button>
@@ -82,10 +75,6 @@ const AuthLoginForm = () => {
           </div>
         </div>
       </form>
-      }
-      {
-          showTokenInputer && <AuthOTPForm  handleTokenResponse={handleTokenResponse} type="others"/>
-      }
     </Fragment>
   );
 };

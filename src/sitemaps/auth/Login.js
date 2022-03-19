@@ -9,9 +9,24 @@ import styles from "../../styles/auth.module.css";
 import AuthOTPForm from "../../components/forms/AuthOTPForm";
 
 const Login = () => {
+  const[showTokenInputer, setShowTokenInputer] = useState(false)
+
+  const showTokenForm = () => {
+    setShowTokenInputer(true)
+  }
+
+  const handleTokenResponse = (response) => {
+    if (response === "success") {
+      alert("login successful dashboard under development")
+    }
+  }
 
   return (
+
     <Fragment>
+
+      {
+          !showTokenInputer &&
       <div className={styles.authFormWrapper}>
         <div className='container-fluid'>
           <div className='row'>
@@ -28,12 +43,28 @@ const Login = () => {
                     </Link>
                   </div>
                 </div>
-                <AuthLoginForm />
+                <AuthLoginForm showTokenForm={ showTokenForm } />
               </div>
             </div>
           </div>
         </div>
       </div>
+      }
+      { showTokenInputer &&
+          <div className={styles.authFormWrapper}>
+          <div className='container-fluid'>
+            <div className='row'>
+              <div className='offset-lg-4 col-lg-4'>
+                <div className={styles["authForm"]}>
+                  <div className={styles["authTop"]}>
+                    <AuthOTPForm  handleTokenResponse={handleTokenResponse} type="others"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
 
     </Fragment>
   );

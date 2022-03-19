@@ -3,7 +3,7 @@ import "../../styles/form.css";
 import AuthOTPForm from "./AuthOTPForm";
 import AuthNewPasswordForm from "./AuthNewPasswordForm";
 
-const AuthResetPasswordForm = () => {
+const AuthResetPasswordForm = (props) => {
 
   const[showAuthResetPasswordForm, setShowAuthResetPasswordForm] = useState(false)
   const[showAuthNewPasswordForm, setShowAuthNewPasswordForm] = useState(false)
@@ -11,7 +11,7 @@ const AuthResetPasswordForm = () => {
 
 
   const showGetOTPForm = () => {
-    setShowAuthResetPasswordForm(true)
+   props.showTokenInputer()
   }
 
   const handleTokenResponse = (response) => {
@@ -24,8 +24,6 @@ const AuthResetPasswordForm = () => {
 
   return (
     <Fragment>
-      {
-          !showAuthResetPasswordForm && showInitial ?
       <form>
         <div className='formWrapper'>
           <div className='form-group row'>
@@ -51,13 +49,7 @@ const AuthResetPasswordForm = () => {
             </div>
           </div>
         </div>
-      </form> : <></>
-      }
-      {
-          showAuthResetPasswordForm && <AuthOTPForm  handleTokenResponse={handleTokenResponse} type="others"/>
-      }
-
-      {  showAuthNewPasswordForm && <AuthNewPasswordForm/>}
+      </form>
     </Fragment>
   );
 };
