@@ -39,7 +39,7 @@ const ResetPassword = () => {
                   <div className={styles["authTop"]}>
                   <h2>Reset Password</h2>
                   <p className='text-center'>
-                    Enter the email or phone number889  associated with your account
+                    Enter the email or phone number associated with your account
                     to reset your password
                   </p>
                 </div>
